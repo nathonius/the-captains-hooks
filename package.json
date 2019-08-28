@@ -1,6 +1,6 @@
 {
   "name": "the-captains-hooks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A collection of React + TypeScript utility hooks",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

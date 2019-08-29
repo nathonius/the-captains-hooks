@@ -17,7 +17,7 @@ export function useHover<T extends Element>(): [React.RefObject<T>, boolean] {
         node.removeEventListener('mouseout', handleMouseOut);
       };
     }
-  }, [ref.current]);
+  }, []);
 
   return [ref, hovered];
 }

@@ -29,7 +29,7 @@ it('applies event listener', () => {
 it('applies listener to window by default', () => {
   // Arrange
   const mockFn = jest.fn();
-  const result = renderHook(() => useEventListener('click', mockFn));
+  renderHook(() => useEventListener('click', mockFn));
 
   // Act
   fireEvent.click(window);

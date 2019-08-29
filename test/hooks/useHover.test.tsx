@@ -3,9 +3,9 @@ import { render, fireEvent } from '@testing-library/react';
 import { useHover } from '../../src/hooks/useHover';
 
 const Wrapper: React.FC = props => {
-  const [ref, hovered] = useHover<HTMLDivElement>();
+  const [hovered, bind] = useHover();
   return (
-    <div id="root" ref={ref}>
+    <div id="root" {...bind}>
       {hovered.toString()}
     </div>
   );

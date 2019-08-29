@@ -1,16 +1,12 @@
-import { useRef, useCallback } from 'react';
+import { useRef, useCallback, Ref, RefObject } from 'react';
 
-export function useScrollTo<T extends Element>(): [
-  React.RefObject<T>,
-  () => void
-] {
-  const ref = useRef<T>(null);
+export function useScrollTo<T extends Element>(ref: RefObject<T>): () => void {
   const scrollTo = useCallback(() => {
     if (ref.current) {
       window.scrollTo(0, ref.current.getBoundingClientRect().top);
     }
-  }, [ref.current]);
-  return [ref, scrollTo];
+  }, [ref, ref.current]);
+  return scrollTo;
 }
 
 export default useScrollTo;

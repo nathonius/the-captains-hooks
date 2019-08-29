@@ -18,7 +18,7 @@ it('defaults to false', () => {
   expect(input.value).toBe('false');
 });
 
-it('is true when hovered', () => {
+it('is true when focused', () => {
   // Arrange
   const result = render(<Wrapper />);
   const input = result.container.querySelector('#root') as HTMLInputElement;
@@ -30,14 +30,14 @@ it('is true when hovered', () => {
   expect(input.value).toBe('true');
 });
 
-it('is false on mouseOut', () => {
+it('is false on blur', () => {
   // Arrange
   const result = render(<Wrapper />);
   const input = result.container.querySelector('#root') as HTMLInputElement;
 
   // Act
-  fireEvent.focusIn(input);
-  fireEvent.focusOut(input);
+  fireEvent.focus(input);
+  fireEvent.blur(input);
 
   // Assert
   expect(input.value).toBe('false');

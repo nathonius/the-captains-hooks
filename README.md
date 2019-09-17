@@ -13,7 +13,7 @@ A collection of React + TypeScript utility hooks, mostly stolen from the wonderf
 - [useFocus](#useFocus)
 - [useHover](#useHover)
 - [useLockBodyScroll](#useLockBodyScroll) tbd
-- [useOnClickOutside](#useOnClickOutside) tbd
+- [useOnClickOutside](#useOnClickOutside)
 - [useOnScreen](#useOnScreen) tbd
 - [useScrollTo](#useScrollTo)
 - [useWindowSize](#useWindowSize) tbd
@@ -71,6 +71,29 @@ const ExampleComponent: React.FC = props => {
       mouseOut={hoverMethods.mouseOut}
     >
       {hover.toString()}
+    </div>
+  );
+}
+```
+
+### useOnClickOutside
+
+Calls the given callback only if the click event target is not contained by the given ref's current value.
+
+``` tsx
+const ExampleComponent: React.FC = props => {
+  const ref = React.useRef<HTMLDivElement>(null);
+  const callback = (event: MouseEvent) => alert(`Got event with target ${event.target}`);
+  useOnClickOutside(ref, callback);
+  return (
+    <div>
+      <div>
+        click me to call callback with event!
+      </div>
+      <div ref={ref}>
+        click me and nothing happens
+        <span>click me and nothing still happens!</span>
+      </div>
     </div>
   );
 }

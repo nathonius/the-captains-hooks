@@ -9,7 +9,6 @@ A collection of React + TypeScript utility hooks, mostly stolen from the wonderf
 ## Hooks
 
 - [useDebounce](#useDebounce) tbd
-- [useEventListener](#useEventListener) tbd
 - [useFocus](#useFocus)
 - [useHover](#useHover)
 - [useLockBodyScroll](#useLockBodyScroll) tbd
